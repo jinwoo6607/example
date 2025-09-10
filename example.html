@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxora | Beyond Luxury</title>
+  <!-- 타이포그래피와 미니멀 컬러 스타일 강조 -->
+  <style>
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body {
+      font-family: 'Playfair Display', serif;
+      color: #111;
+      background: #faf9f7;
+      line-height:1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    header {
+      display:flex; justify-content: space-between; align-items:center;
+      padding:20px 40px; background:#000; color:#fff;
+      position: sticky; top:0; z-index:10;
+    }
+    .logo { font-size: 30px; letter-spacing:3px; }
+    nav a { margin-left: 30px; font-size:16px; transition:0.2s; }
+    nav a:hover { color: #aaa; }
+
+    /* 히어로 섹션: 3D 시차 효과 + AI 메시지 */
+    .hero {
+      position: relative;
+      height: 85vh;
+      background: url('https://via.placeholder.com/1600x800') center/cover no-repeat;
+      display:flex; justify-content:center; align-items:center; color:#fff;
+      text-align:center;
+      overflow:hidden;
+    }
+    .hero::before {
+      content:'';
+      position:absolute; top:0; left:0; width:100%; height:100%;
+      background:rgba(0,0,0,0.4);
+    }
+    .hero-content {
+      position:relative; z-index:1;
+      animation: fadeIn 2s ease-in-out;
+    }
+    @keyframes fadeIn { from { opacity:0; transform: translateY(20px); } to { opacity:1; transform: translateY(0); } }
+
+    .hero h1 { font-size: 54px; margin-bottom:10px; letter-spacing:2px; }
+    .hero p { font-size:20px; margin-bottom:30px; }
+    .btn { padding:14px 40px; border:2px solid #fff; background:none; color:#fff; font-size:18px; cursor:pointer; transition:.3s; }
+    .btn:hover { background:#fff; color:#000; }
+
+    /* 추천 상품 — 3D 회전 미리보기+ AR 버튼 */
+    section { padding:60px 40px; max-width:1200px; margin:auto; }
+    h2 { font-size:28px; text-align:center; margin-bottom:40px; }
+    .product-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; }
+    .product-card {
+      width:260px; background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.1);
+      transition: transform .3s;
+      position:relative;
+    }
+    .product-card:hover { transform: translateY(-8px); }
+    .product-card img { width:100%; height:auto; }
+    .product-info { padding:15px; text-align:left; }
+    .product-info h3 { font-size:18px; margin-bottom:5px; }
+    .product-info p { font-size:16px; color:#333; }
+    .product-info small { color:#888; }
+    .ar-btn {
+      position:absolute; bottom:15px; right:15px; padding:6px 10px;
+      background:#000; color:#fff; font-size:12px; border:none;
+      cursor:pointer; transition:.2s;
+    }
+    .ar-btn:hover { background:#444; }
+
+    /* 브랜드 스토리 & 지속 가능성 */
+    .story p, .vip p, .auth p, .sustain p {
+      max-width:800px; margin: auto; font-size:17px; color:#333; margin-bottom:20px;
+    }
+    .story h2, .vip h2, .auth h2, .sustain h2 { margin-bottom:20px; font-size:26px; text-align:center; }
+
+    /* 지속 가능한 메시지 섹션 */
+    .sustain {
+      background:#f0f0f0; padding:60px 40px;
+    }
+
+    /* 푸터 */
+    footer {
+      background:#000; color:#aaa; text-align:center; padding:30px 20px; font-size:14px;
+    }
+
+    /* 반응형 */
+    @media (max-width:768px){
+      nav a { margin-left:10px; font-size:14px; }
+      .hero h1 { font-size:36px; }
+      .product-grid { flex-direction: column; align-items:center; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">LUXORA</div>
+    <nav>
+      <a href="#home">홈</a>
+      <a href="#shop">쇼핑</a>
+      <a href="#story">브랜드</a>
+      <a href="#vip">VIP</a>
+      <a href="#auth">정품인증</a>
+      <a href="#sustain">지속가능성</a>
+      <a href="#contact">문의</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Timeless Luxury</h1>
+      <p>당신만을 위한 개인화된 명품 탐색 여정</p>
+      <button class="btn">컬렉션 보기</button>
+    </div>
+  </section>
+
+  <section class="products" id="shop">
+    <h2>추천 상품</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/260x360" alt="샤넬 핸드백">
+        <div class="product-info">
+          <h3>샤넬 클래식 핸드백</h3>
+          <p>₩5,200,000</p>
+          <small>AI 맞춤 추천</small>
+        </div>
+        <button class="ar-btn">AR 보기</button>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/260x360" alt="루이비통 지갑">
+        <div class="product-info">
+          <h3>루이비통 모노그램 지갑</h3>
+          <p>₩1,300,000</p>
+          <small>베스트셀러</small>
+        </div>
+        <button class="ar-btn">AR 보기</button>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/260x360" alt="프라다 스니커즈">
+        <div class="product-info">
+          <h3>프라다 스니커즈</h3>
+          <p>₩1,800,000</p>
+          <small>한정판</small>
+        </div>
+        <button class="ar-btn">AR 보기</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="story" id="story">
+    <h2>브랜드 이야기</h2>
+    <p>Luxora는 유산을 존중하는 장인정신과 현대적 혁신을 결합합니다. 모든 제품은 시간이 지나도 값어치를 잃지 않도록 최고의 소재로 정성을 다해 제작합니다.</p>
+  </section>
+
+  <section class="vip" id="vip">
+    <h2>VIP 전용 혜택</h2>
+    <p>AI 기반 스타일링, 프라이빗 이벤트 초대, 얼리 액세스 등 VIP 고객 전용 맞춤 경험을 제공합니다.</p>
+  </section>
+
+  <section class="auth" id="auth">
+    <h2>정품 인증 & 보안</h2>
+    <p>블록체인 기반의 정품 추적 시스템을 도입하여, 제품의 진위 및 출처를 완벽히 보장합니다.</p>
+  </section>
+
+  <section class="sustain" id="sustain">
+    <h2>지속가능성과 투명성</h2>
+    <p>모든 제품은 윤리적으로 조달된 소재만을 사용하며, 친환경 호스팅과 최적화된 웹 성능을 기반으로 운영됩니다. Luxora는 지속 가능한 럭셔리를 추구합니다.</p>
+  </section>
+
+  <footer id="contact">
+    <p>&copy; 2025 Luxora. 모든 권리 보유. | 고객센터: 1234‑5678 | info@luxora.kr</p>
+  </footer>
+</body>
+</html>
